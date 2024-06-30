@@ -64,12 +64,11 @@ The supplied data needs to adhere to this scheme:
 If you do not stick to this scheme the code will not work correctly!
 
 ## Developer
-Developed by Robert Goellinger, RWTH Aachen University. Issues or requests can be submitted by email to `robert.goellinger@rwth-aachen.de`. Please make sure to include your log-file for analysis of the underlying problems.
+Developed by Robert Goellinger, RWTH Aachen University. Issues or requests can be submitted by opening a new issue on github. Please make sure to include your log-file for analysis of the underlying problems.
 
 ## Cite as: 
 Robert Goellinger (2021), ImageRefiner - A Matlab Toolbox for refining nephrological images, RWTH Aachen University
 
 ## Resources
-1.  Luke Winslow (2021). log4m - A powerful and simple logger for matlab (https://www.mathworks.com/matlabcentral/fileexchange/37701-log4m-a-powerful-and-simple-logger-for-matlab), MATLAB Central File Exchange. Retrieved January 7, 2021. 
-2. Gamma, Helm, Johnson & Vlissides (1994). Design Patterns published by Addison Wesley
-3. "Gli1+ Pericyte Loss Induces Capillary Rarefaction and Proximal Tubular Injury" by Rafael Kramann et al. 
+1.  Winslow, L.;  log4m - A powerful and simple logger for matlab (https://www.mathworks.com/matlabcentral/fileexchange/37701-log4m-a-powerful-and-simple-logger-for-matlab), MATLAB Central File Exchange. Retrieved January 7, 2021. 
+2. Kramann, R.; Wongboonsin, J.; Chang-Panesso, M.; Machado, F.; Humphreys, B.; Gli1+ Pericyte Loss Induces Capillary Rarefaction and Proximal Tubular Injury; Journal of the American Society of Nephrology;
