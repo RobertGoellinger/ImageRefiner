@@ -1,0 +1,139 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Concept &#8212; ImageRefiner 0.1 documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Graphical User Interface" href="GraphicalUserInterface.html" />
+    <link rel="prev" title="Welcome to ImageRefiner’s documentation!" href="../index.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="concept">
+<h1>Concept<a class="headerlink" href="#concept" title="Permalink to this headline">¶</a></h1>
+<p>The user of the ImageRefiner should call tasks to interact with the programm. The tasks make sure that the appropriate Methods get called in the correct order.
+All settings that are necessary to run the ImageRefiner need to be specified inside the <code class="file docutils literal notranslate"><span class="pre">Settings.m</span></code>. These settings are accessed by different parts of the ImageRefiner, this is the single source of truth.</p>
+<div class="section" id="folder-structure">
+<h2>Folder structure<a class="headerlink" href="#folder-structure" title="Permalink to this headline">¶</a></h2>
+<p>The ImageRefiner expects the following directory structure in order to execute correctly. Please make sure to follow this structure exactly.
+In case this folder structure is not supplied the ImageRefiner will throw a logical error exception.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">data</span>
+<span class="o">|----</span><span class="mi">191_19</span>
+<span class="o">|</span>       <span class="o">|----</span><span class="n">Cortexs</span>
+<span class="o">|</span>       <span class="o">|</span>       <span class="o">|----</span><span class="mi">191</span><span class="o">-</span><span class="mi">19</span><span class="n">_GF01</span>
+<span class="o">|</span>       <span class="o">|</span>       <span class="o">|</span>       <span class="o">|-----&lt;</span><span class="n">Name</span><span class="o">&gt;</span><span class="n">_CH1</span><span class="o">.</span><span class="n">tif</span>
+<span class="o">|</span>       <span class="o">|</span>       <span class="o">|</span>       <span class="o">|-----&lt;</span><span class="n">Name</span><span class="o">&gt;</span><span class="n">_CH2</span><span class="o">.</span><span class="n">tif</span>
+<span class="o">|</span>       <span class="o">|</span>       <span class="o">|</span>       <span class="o">|-----&lt;</span><span class="n">Name</span><span class="o">&gt;</span><span class="n">_CH3</span><span class="o">.</span><span class="n">tif</span>
+<span class="o">|</span>       <span class="o">|</span>       <span class="o">|</span>       <span class="o">|-----&lt;</span><span class="n">Name</span><span class="o">&gt;</span><span class="n">_CH4</span><span class="o">.</span><span class="n">tif</span>
+<span class="o">|</span>       <span class="o">|</span>       <span class="o">|----</span><span class="mi">191</span><span class="o">-</span><span class="mi">19</span><span class="n">_GF02</span>
+<span class="o">|</span>       <span class="o">|</span>       <span class="o">|</span>       <span class="o">|-----&lt;</span><span class="n">Name</span><span class="o">&gt;</span><span class="n">_CH1</span><span class="o">.</span><span class="n">tif</span>
+<span class="o">|</span>       <span class="o">|</span>       <span class="o">|</span>       <span class="o">|-----&lt;</span><span class="n">Name</span><span class="o">&gt;</span><span class="n">_CH2</span><span class="o">.</span><span class="n">tif</span>
+<span class="o">|</span>       <span class="o">|</span>       <span class="o">|</span>       <span class="o">|-----&lt;</span><span class="n">Name</span><span class="o">&gt;</span><span class="n">_CH3</span><span class="o">.</span><span class="n">tif</span>
+<span class="o">|</span>       <span class="o">|</span>       <span class="o">|</span>       <span class="o">|-----&lt;</span><span class="n">Name</span><span class="o">&gt;</span><span class="n">_CH4</span><span class="o">.</span><span class="n">tif</span>
+<span class="o">|</span>       <span class="o">|----</span><span class="n">Medulla</span>
+<span class="o">|</span>       <span class="o">|</span>       <span class="o">|----</span><span class="mi">191</span><span class="o">-</span><span class="mi">19</span><span class="n">_GF01</span>
+<span class="o">|</span>       <span class="o">|</span>       <span class="o">|</span>       <span class="o">|-----&lt;</span><span class="n">Name</span><span class="o">&gt;</span><span class="n">_CH1</span><span class="o">.</span><span class="n">tif</span>
+<span class="o">|</span>       <span class="o">|</span>       <span class="o">|</span>       <span class="o">|-----&lt;</span><span class="n">Name</span><span class="o">&gt;</span><span class="n">_CH2</span><span class="o">.</span><span class="n">tif</span>
+<span class="o">|</span>       <span class="o">|</span>       <span class="o">|</span>       <span class="o">|-----&lt;</span><span class="n">Name</span><span class="o">&gt;</span><span class="n">_CH3</span><span class="o">.</span><span class="n">tif</span>
+<span class="o">|</span>       <span class="o">|</span>       <span class="o">|</span>       <span class="o">|-----&lt;</span><span class="n">Name</span><span class="o">&gt;</span><span class="n">_CH4</span><span class="o">.</span><span class="n">tif</span>
+<span class="o">...</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="unit-and-integration-tests">
+<h2>Unit and Integration tests<a class="headerlink" href="#unit-and-integration-tests" title="Permalink to this headline">¶</a></h2>
+<p>For all classes unit tests were written, these can either be run individually or in series. Before commiting to the repository please make sure to run all unit and integration tests.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">ImageRefiner</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Concept</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#folder-structure">Folder structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#unit-and-integration-tests">Unit and Integration tests</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="GraphicalUserInterface.html">Graphical User Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GettingStarted.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="TechnicalDetails.html">Technical details</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="../index.html" title="previous chapter">Welcome to ImageRefiner’s documentation!</a></li>
+      <li>Next: <a href="GraphicalUserInterface.html" title="next chapter">Graphical User Interface</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, Robert Goellinger.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.5</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.8</a>
+      
+      |
+      <a href="../_sources/source/Concept.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
