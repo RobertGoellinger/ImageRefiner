@@ -2,8 +2,7 @@
 Image Refinement for medical images using MATLAB
 
 ## Aim of this software
-This software was written to improve the MATLAB script published in "Gli1+ Pericyte Loss Induces Capillary Rarefaction and
-Proximal Tubular Injury" by Rafael Kramann et al. 
+This software was written to improve the MATLAB script published in "Gli1+ Pericyte Loss Induces Capillary Rarefaction and Proximal Tubular Injury" by Kramann, R. et al. 
 
 ## Set up Guide
 1. Clone Git-Repository to a place of your choosing on your hard drive

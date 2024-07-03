@@ -3,7 +3,7 @@ classdef Settings
     
     properties (Constant = true)
         % Version number: please change with every release
-        RELEASE_VERSION = '0.9.6';
+        RELEASE_VERSION = '1.0.0';
         
         % LogFileName
         LOG_FILE_NAME = 'ImageRefinerLog.log';

@@ -6,3 +6,4 @@
 | 0.9.1     | BugFix: fixed issue with incompatible identifier names    |
 | 0.9.2     | Refactoring of Json Exporter                              |
 | 0.9.3     | Minor BugFix for input parser                             |
+| 1.0.0     | Release Version 1.0 for publication                       |
